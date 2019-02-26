@@ -5,3 +5,5 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Crawl.create(name: 'Manhattan Tourist Pubcrawl', description: 'This pubcrawl is intended to give new tourists the must-see bar experience')
+Crawl.create(name: 'Brooklyn Pubcrawl', description: 'Tired of Manhattan? You will enjoy the finest bars brooklyn has to offer')
