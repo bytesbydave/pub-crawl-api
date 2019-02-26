@@ -38,6 +38,11 @@ class CrawlsController < ApplicationController
     @crawl.destroy
   end
 
+  def locations
+    crawl = Crawl.find(params[:crawl_id])
+    render json: crawl.locations
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_crawl
