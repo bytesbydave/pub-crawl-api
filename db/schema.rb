@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_25_223503) do
+ActiveRecord::Schema.define(version: 2019_02_26_023159) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,17 @@ ActiveRecord::Schema.define(version: 2019_02_25_223503) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "locations", force: :cascade do |t|
+    t.bigint "crawl_id"
+    t.string "name"
+    t.string "description"
+    t.string "website"
+    t.string "image_url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["crawl_id"], name: "index_locations_on_crawl_id"
+  end
+
   create_table "streams", force: :cascade do |t|
     t.string "title"
     t.text "description"
@@ -31,4 +42,5 @@ ActiveRecord::Schema.define(version: 2019_02_25_223503) do
     t.string "userId"
   end
 
+  add_foreign_key "locations", "crawls"
 end
