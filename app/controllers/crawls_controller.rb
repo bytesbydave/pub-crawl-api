@@ -43,6 +43,10 @@ class CrawlsController < ApplicationController
     render json: crawl.locations
   end
 
+  def add_locations
+    
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_crawl
