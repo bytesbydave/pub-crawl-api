@@ -6,6 +6,12 @@ class CreateLocations < ActiveRecord::Migration[5.2]
       t.string :description
       t.string :website
       t.string :image_url
+      t.string :phone
+      t.string :rating
+      t.string :yelp_id
+      t.string :category
+      t.string :city
+      t.string :address
 
       t.timestamps
     end
