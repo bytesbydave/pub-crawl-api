@@ -18,6 +18,7 @@ class LocationsController < ApplicationController
     @location = Location.new(location_params)
 
     if @location.save
+      @location.crawl.update_attributes(image: @location.image_url)
       render json: @location, status: :created, location: @location
     else
       render json: @location.errors, status: :unprocessable_entity
