@@ -16,7 +16,7 @@ class LocationsController < ApplicationController
   # POST /locations
   def create
     @location = Location.new(location_params)
-
+    
     if @location.save
       @location.crawl.update_attributes(image: @location.image_url)
       render json: @location, status: :created, location: @location
