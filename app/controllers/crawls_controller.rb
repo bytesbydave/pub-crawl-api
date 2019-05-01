@@ -16,7 +16,6 @@ class CrawlsController < ApplicationController
   # POST /crawls
   def create
     @crawl = Crawl.new(crawl_params)
-
     if @crawl.save
       render json: @crawl, status: :created, location: @crawl
     else
@@ -55,6 +54,6 @@ class CrawlsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def crawl_params
-      params.require(:crawl).permit(:name, :description, :userId, :image)
+      params.require(:crawl).permit(:name, :description, :userId, :image, :start_time)
     end
 end
